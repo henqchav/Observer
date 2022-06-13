@@ -6,14 +6,16 @@ import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	Pane root = new Pane();
+	StackPane root = new StackPane();
 	HBox btns = new HBox();
 	Button yellowBtn = new Button("Yellow");
 	Button blueBtn = new Button("Blue");
@@ -23,8 +25,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		fuctions();
-		
-		
+		Scene scene = new Scene(root,800,400);
+		StackPane.setAlignment(btns,Pos.CENTER);
+		primaryStage.setTitle("Tarea-AspectJ");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	private void changeYellow(Pane root) {}
 	private void changeBlue(Pane root) {}
